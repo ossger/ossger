@@ -17,4 +17,4 @@ PhotoCull.
 
 - Refresh `homelab/` when the lab materially changes, e.g. a new topic doc in
   `homelab/Docs/topics/`
-- Add a write-up when AZ-104 lands, or an Azure lab gets rebuilt as code
+- Add a write-up if the Azure lab gets rebuilt as code

@@ -2,7 +2,7 @@
 
 IT support and infrastructure in Denver, CO. Five-plus years across an enterprise service desk,
 contract deployment work, and a home lab I run like production.
-**CCNA** (AZ-104 in progress) · Active Directory · Entra ID / hybrid identity · Windows Server ·
+**CCNA** · Active Directory · Entra ID / hybrid identity · Windows Server ·
 Linux · Azure networking · pfSense · PowerShell.
 
 Looking for **help desk, desktop support, network administrator, or systems administrator** work —
