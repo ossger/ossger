@@ -11,7 +11,7 @@ PhotoCull.
       PowerShell samples, all scrubbed to T0
 - [ ] Ross reviews → `gh repo create ossger/ossger --public` and push
 - [ ] Profile settings (name, bio, location, blog) via `gh api`; Ross pins
-      Photography, photocull-site, and this repo
+      PhotoCull, photocull-site, and this repo
 
 ## Later (no dates)
 
