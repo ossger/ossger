@@ -60,6 +60,29 @@ exposed key, a rule that lets traffic through) goes on the page only once it
 is remediated. The push to GitHub follows the root
 `CLAUDE.md` commit grant.
 
+## System showcase (`claude-system/`)
+
+A public tour of the `~/Projects` Claude Code setup: `README.md` (overview,
+architecture diagram, delegation ladder, queue, surfaces, tiers, close-out)
+and `templates/` (sanitized rewrites of an agent file, a command, the worker
+guard hook, a standing-orders file). Source: the root scaffolding
+(`~/Projects/CLAUDE.md`, `SECURITY.md`, `MACHINES.md`, `.claude/`), read-only,
+rewritten, never copied wholesale.
+
+**Refreshed when the root scaffolding materially changes:** a new or retired
+agent, command, standing session or script the page describes, or a doctrine
+change (the ladder, the model table, the commit grant, the tiers, the
+close-out order). Routine project work doesn't touch it.
+
+Same scrub gate and content rules as the rest of this repo, plus: no project
+names that reveal private matters (generalize to the registry categories), no
+absolute home paths (write `~/Projects`), no session names, IDs or URLs, no
+account labels, no ticket numbers, no dates of Ross's decisions. After the
+scrub gate, also grep `claude-system/` for emails, phone numbers, `session_`,
+`/Users/`, and each private project name from `PROJECTS.md`; justify or fix
+every hit. If the guard template changes, `python3 -I
+claude-system/templates/scripts/worker-guard.py --selftest` must pass.
+
 ## Project Pulse — cross-project context
 
 Contract: `~/Projects/vault/Pulse/README.md`. At the end of substantive work,

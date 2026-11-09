@@ -14,6 +14,7 @@ Denver area or remote.
 | **[PhotoCull](https://github.com/ossger/PhotoCull)** | An open-source desktop photo-culling app (Electron + Python), shipped end to end: cross-platform packaging, Apple code signing and notarization, a releases repo, and a [download site](https://photocull.infrarg.com) ([source](https://github.com/ossger/photocull-site)). |
 
 I build with Claude Code under written guardrails: a runbook it reads first, data tiers it can't
-cross, and nothing ships without my review.
+cross, and nothing ships without my review. **[How I run it](claude-system/)**: an orchestrator
+session, delegated subagents and background sessions, a file-queue pump, and hook-enforced git rules.
 
 **[LinkedIn](https://www.linkedin.com/in/rossgoeringer/)**
