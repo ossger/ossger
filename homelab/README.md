@@ -9,6 +9,8 @@ provides remote access. Everything is documented, scripted, and rebuildable from
 All hostnames, domains and addresses in this repository are placeholders (`example.com`
 and RFC 5737 documentation ranges). No real names, keys or credentials appear here.
 
+Current state: [Lab status](STATUS.md), updated after each lab session.
+
 ## Architecture
 
 ```mermaid
@@ -61,7 +63,7 @@ flowchart TB
 | AD DS forest on DC1 | Directory, DNS, OU design, users, groups, Windows LAPS | Active Directory administration, delegation, least privilege |
 | Group Policy | Domain password policy, workstation security baseline, drive mappings | GPO design, OU-based targeting, SMB hardening |
 | FS1 | SMB shares with NTFS-only permissions, DFS namespace | File services, permission models, DFS |
-| Two-tier PKI | Offline root CA, online enterprise issuing CA, HTTP CRL/AIA publication, autoenrollment, LDAPS | ADCS, certificate lifecycle, CRL management |
+| Two-tier PKI | Offline root CA, online enterprise issuing CA, CRL/AIA publication (root over HTTP; issuing CA over LDAP, HTTP being added), autoenrollment, LDAPS | ADCS, certificate lifecycle, CRL management |
 | Hybrid identity | Entra Connect (password hash sync), public UPN suffix | Entra ID, sync troubleshooting, sign-in log analysis |
 | FW1 (pfSense) | Routing, NAT, aliases, logged segmentation gate, invert-match egress | Firewall policy, VLAN segmentation, change rollout |
 | Remote access | Mesh VPN subnet router, Windows Admin Center, SSH certificate authority | VPN, SSH PKI, remote administration |

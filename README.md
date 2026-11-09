@@ -10,7 +10,7 @@ Denver area or remote.
 
 | | What it shows |
 |---|---|
-| **[Home lab write-ups](homelab/)** | AD DS with a two-tier PKI, hybrid identity, a zone-based pfSense policy rolled out in four phases, a Prometheus/Grafana/Loki monitoring stack, and an idempotent PowerShell rebuild, run with tickets, runbooks, and a troubleshooting log. |
+| **[Home lab write-ups](homelab/)** | AD DS with a two-tier PKI, hybrid identity, a zone-based pfSense policy rolled out in four phases, a Prometheus/Grafana/Loki monitoring stack, and an idempotent PowerShell rebuild, run with tickets, runbooks, and a troubleshooting log. Current state: [lab status](homelab/STATUS.md). |
 | **[PhotoCull](https://github.com/ossger/PhotoCull)** | An open-source desktop photo-culling app (Electron + Python), shipped end to end: cross-platform packaging, Apple code signing and notarization, a releases repo, and a [download site](https://photocull.infrarg.com) ([source](https://github.com/ossger/photocull-site)). |
 
 I build with Claude Code under written guardrails: a runbook it reads first, data tiers it can't

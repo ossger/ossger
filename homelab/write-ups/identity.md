@@ -35,8 +35,10 @@ hierarchy, and a sync link to Entra ID.
 The root stays offline so that a compromise of an always-on server does not compromise the
 trust anchor. Operational points:
 
-- CRL and AIA locations are **HTTP**, served by IIS on DC1 under `/pki`. HTTPS would make
-  certificate validation depend on a certificate that is itself being validated.
+- The offline root's CRL and AIA locations are **HTTP**, served by IIS on DC1 under `/pki`;
+  the issuing CA publishes to LDAP today, with an HTTP location being added so non-domain
+  clients can check revocation. HTTP, not HTTPS: validation can't depend on a certificate
+  that is itself being validated.
 - Autoenrollment via GPO puts the root and issuing CA into the trust store of every
   domain-joined machine; LDAPS on the DC uses a template-issued certificate.
 - A custom certificate template and an HTTPS binding on the DC were added after the base

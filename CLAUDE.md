@@ -32,6 +32,34 @@ addresses and subnets, `svc-example`, and generic uses of words like "token".
 No real hostnames, subnets, tailnet or node names, thumbprints, account names,
 credentials, employer or client names, health or financial detail.
 
+## Lab status page (`homelab/STATUS.md`; Ross, 2026-11-09)
+
+The public, current view of the lab: what it consists of and where each piece
+stands, so the showcase is never a snapshot. **Refreshed at the close-out of
+every session that changes the lab** (a lab change made, a lab ticket
+progressed or closed, a component added, started or retired), by whichever
+session did the work: the orchestrator, a homelab session, or `workbench`.
+Pure study or drill sittings that change nothing in the lab don't touch it.
+
+A refresh, in this order:
+1. Bump `Last updated:`.
+2. Fix the affected rows in **At a glance** (status vocabulary is fixed:
+   Running, In progress, Planned, Deferred, Retired).
+3. Add one dated line at the top of **Recent changes** (keep 10; the oldest
+   drops off), and adjust **Current focus** / **Next up** if they moved.
+4. If a component was added or retired, fix its row in `homelab/README.md`
+   so the two pages agree.
+5. Run the scrub gate below, then commit `homelab/STATUS.md` (and
+   `homelab/README.md` if touched) as its own portfolio commit, named paths
+   only, message `Lab status: <what changed>`.
+
+Content rules on top of the scrub gate: no ticket numbers, no job-search or
+interview framing, no target employers; lab work is called lab work; every
+line traces to a homelab commit or ticket. An open security finding (an
+exposed key, a rule that lets traffic through) goes on the page only once it
+is remediated. The push to GitHub follows the root
+`CLAUDE.md` commit grant.
+
 ## Project Pulse — cross-project context
 
 Contract: `~/Projects/vault/Pulse/README.md`. At the end of substantive work,
