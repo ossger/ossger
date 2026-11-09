@@ -57,8 +57,14 @@ Content rules on top of the scrub gate: no ticket numbers, no job-search or
 interview framing, no target employers; lab work is called lab work; every
 line traces to a homelab commit or ticket. An open security finding (an
 exposed key, a rule that lets traffic through) goes on the page only once it
-is remediated. The push to GitHub follows the root
-`CLAUDE.md` commit grant.
+is remediated.
+
+**Push (Ross, 2026-11-09, standing):** after the commit, push without asking
+(`git push origin main`, fast-forward only) when every unpushed commit
+(`git log origin/main..main --stat`) touches only `homelab/STATUS.md` and
+`homelab/README.md`. If anything else is unpushed, don't push; it waits for
+Ross's yes. A background worker can't push (its guard blocks it): it reports,
+and the orchestrator pushes.
 
 ## System showcase (`claude-system/`)
 
