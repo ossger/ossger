@@ -17,7 +17,7 @@ table, **Planned** means built before the outage with its restart queued, or new
 | FS1 (file server, DFS) | Planned | — | Next server in the restart order |
 | Two-tier PKI | In progress | 2026-11-07 | CA-ISSUING back, CRL fresh, chain validates, LDAPS listening; CA-ROOT stays offline by design; HTTP CRL point being added |
 | Hybrid identity (SYNC1) | Planned | — | Restart and sync check queued |
-| FW1 (pfSense) | Running | 2026-11-01 | Interfaces and ruleset verified against the design; a web-admin access fix is queued |
+| FW1 (pfSense) | Running | 2026-11-01 | Interfaces and ruleset verified against the design |
 | Remote access (mesh VPN) | Running | 2026-10-22 | Tag-based access policy written down; full remote-path check queued |
 | SSH certificate authority | In progress | 2026-11-07 | CA key and user certificate verified; server-side checks wait on DOCKER1 |
 | DOCKER1 (Ubuntu, Docker) | Planned | — | Restart queued after its storage is reattached; brings back the SSSD domain join |
@@ -46,15 +46,14 @@ table, **Planned** means built before the outage with its restart queued, or new
 ## Recent changes
 
 - **2026-11-07** Issuing CA back online: service and CRL healthy, chain validates. Found its CRL
-  publishes to LDAP only, and two health checks that report green on the wrong data (fixes queued).
+  publishes to LDAP only; an HTTP distribution point is being added.
 - **2026-11-07** Every VM showed a critical state at start. Worked it from the logs to an
   unplanned host sleep; it cleared on its own, no checkpoints touched, and host sleep is now off.
 - **2026-11-02** DC1 back after the outage: time-sync chain documented, expired evaluation
   license extended, `dcdiag` clean, event collector set to start automatically.
 - **2026-11-02** Host clean-up: an unused SSH server stopped, wake-on-pattern turned off, stale
   backups removed; the PowerShell profile now loads straight from the repo.
-- **2026-11-01** FW1 verified after the outage: interfaces and ruleset checked against the design;
-  a web-GUI access fix is queued as its own change.
+- **2026-11-01** FW1 verified after the outage: interfaces and ruleset checked against the design.
 - **2026-10-30** Recovery resumed: host pre-flight finished (script execution policy, automatic
   checkpoints confirmed off on all seven VMs).
 - **2026-10-29** Benched a used firewall appliance on pfSense CE against a pass/fail bar set in
@@ -71,7 +70,6 @@ table, **Planned** means built before the outage with its restart queued, or new
 
 ## Next up
 
-- Restrict FW1's web GUI to admin sources, with every other source blocked and logged.
 - Build the Windows 11 test client: its own OU so only test policies reach it, and a checkpoint
   after the domain join as the reset button.
 - Edge cutover: ISP gateway to bridge mode, the benched appliance as the house edge, the switch
