@@ -14,7 +14,7 @@ table, **Planned** means built before the outage with its restart queued, or new
 | Hyper-V host | Running | 2026-11-07 | Pre-flight done 2026-10-30; host sleep turned off so it can't suspend the VMs |
 | AD DS forest on DC1 | Running | 2026-11-02 | Back after the outage; `dcdiag` clean, time-sync chain documented |
 | Group Policy | Running | 2026-11-02 | Served by DC1 |
-| FS1 (file server, DFS) | Planned | — | Next server in the restart order |
+| FS1 (file server, DFS) | Running | 2026-11-18 | Back after the outage; shares and the DFS namespace answer, clock in sync |
 | Two-tier PKI | Running | 2026-11-18 | CA-ISSUING back and publishing revocation data over HTTP as well as LDAP; CA-ROOT stays offline by design |
 | Hybrid identity (SYNC1) | Planned | — | Restart and sync check queued |
 | FW1 (pfSense) | Running | 2026-11-18 | Ruleset verified against the design; web-admin certificate reissued from the issuing CA |
@@ -34,13 +34,16 @@ table, **Planned** means built before the outage with its restart queued, or new
 
 ## Current focus
 
-- **Finishing the restart sequence:** file server next, then the sync server, the event-forwarding
+- **Finishing the restart sequence:** the sync server next, then the event-forwarding
   check, the Linux host and its containers, then a full service sweep and fresh encrypted backups.
 - **Linux administration on the Linux host** once it is back: services, storage, patching,
   containers, single sign-on with MFA in front of the existing apps, and tested backups.
 
 ## Recent changes
 
+- **2026-11-18** FS1 back after the outage: expired evaluation license extended, shares and DFS
+  paths verified from a client. A DFS health check that reported failure turned out to be the
+  check itself (its tools aren't installed where it runs), confirmed by testing the service directly.
 - **2026-11-18** Firewall web-admin certificate replaced after its private key was found in a
   web-published folder: the new key was generated on the firewall so only the signing request
   left it, the new certificate was verified end to end over HTTP, and the old one was revoked for
@@ -64,8 +67,6 @@ table, **Planned** means built before the outage with its restart queued, or new
   advance: full line rate at about 30% CPU. Two-router design chosen: the new edge does the house
   NAT, and FW1 stays the lab router behind it with static routes, so a lab outage never takes the
   house down.
-- **2026-10-28** Household Wi-Fi moved to a UniFi U6 Pro on a gigabit PoE+ injector; the ISP
-  gateway's Wi-Fi is off.
 
 ## Next up
 
